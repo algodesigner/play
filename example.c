@@ -40,7 +40,7 @@
 /**
  * "Plays" a tone.
  */
-void tonew(int freq, int duration)
+static void tonew(int freq, int duration)
 {
     printf("tonew: freq=%d, duration=%d\n", freq, duration);
 }
