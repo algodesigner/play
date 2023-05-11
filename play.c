@@ -140,8 +140,6 @@ int play(const char *s, void (*tonew)(int, int))
                 duration = 1;
                 pending_note = true;
                 length_specified = false;
-                if (!*(s + 1))
-                    play_note(note, half_tone, octave, duration, tonew);
             } else if (*s == 'o' || *s == 'O') {
                 if (pending_note) {
                     play_note(note, half_tone, octave, duration, tonew);
@@ -169,6 +167,8 @@ int play(const char *s, void (*tonew)(int, int))
                 } else 
                     return pos;
             }
+            if (pending_note && !*(s + 1))
+                play_note(note, half_tone, octave, duration, tonew);
             break;
         case OCTAVE_NUMBER:
             if (isdigit(*s)) {

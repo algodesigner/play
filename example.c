@@ -48,5 +48,5 @@ static void tonew(int freq, int duration)
 int main()
 {
     puts("Calling PLAY...");
-    play("C8D8E8RO1C16C#16O3GAB", tonew);
+    play("C8D8E8RO1C16C#16O3GAB2", tonew);
 }
