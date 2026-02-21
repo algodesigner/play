@@ -12,4 +12,9 @@ deploy_lib:
 	tar cvfz play.tar.gz play
 	rm -rf play
 
-all: clean build
+test:
+	gcc -std=c99 -o tests play.c tests.c -lm
+	./tests
+	rm -f tests
+
+all: clean build test
